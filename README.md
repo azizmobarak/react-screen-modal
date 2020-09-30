@@ -63,7 +63,19 @@ const closemodal =()=>{
 }
 
   return (
-    // add it inside  a component if nedded
+    <div>
+
+  <div style={{
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"center" ,
+    alignItems:"center",
+    height:"100vh" }} >
+
+   {/* button to show and close the drawer */}
+   <button style={{ width:200,color:"green" }} onClick={()=>openmodal()} >show</button>
+
+  </div>
      <CoverModal
     width={500} // default is 100%
     direction="left" // default is left
@@ -82,6 +94,7 @@ const closemodal =()=>{
 <input type="button" onClick={()=>closemodal()} value="Close it" />
 
     </CoverModal>
+    </div>
   )
 }
 
