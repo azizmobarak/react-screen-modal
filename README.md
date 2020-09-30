@@ -11,25 +11,25 @@ npm install --save react-screen-modal
 ```
 ## props
 
----------------------type-----|-----default--------|----------
+---------------------------------------------------------------
 
-show               | boolean  |      false         |
 
--------------------------------------------------------------
+props----------|----type--|--default--|----------
 
-onClose            |   void   |   --------------   |
 
---------------------------------------------------------------
+show-----------| boolean  |  false
 
-color              | string   |       white        |
 
---------------------------------------------------------------
+onClose---------|   void   |  -----
 
-closeButtonColor   | string   |      black         |
 
---------------------------------------------------------------
+color-----------| string   |       white
 
-closeButtonRight   | boolean  |       false        |
+
+closeButtonColor-| string   |      black
+
+
+closeButtonRight-| boolean  |       false
 
 --------------------------------------------------------------
 
