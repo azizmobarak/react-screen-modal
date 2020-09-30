@@ -53,11 +53,11 @@ const App = () => {
 
 const [show,setshow]=useState(false)
 
-// change to false
+// show
 const openmodal=()=>{
   setshow(true);
 }
-//change to true
+// hide
 const closemodal =()=>{
   setshow(false)
 }
