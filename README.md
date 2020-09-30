@@ -63,7 +63,7 @@ const closemodal =()=>{
 }
 
   return (
-    // add it inside comppnenet or alone
+    // add it inside  a component if nedded
      <CoverModal
     width={500} // default is 100%
     direction="left" // default is left
