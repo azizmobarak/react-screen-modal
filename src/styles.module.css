@@ -1,9 +1,27 @@
 /* add css module styles here (optional) */
 
-.test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
-  text-align: center;
+.maincontainer {
+    width: 100%;
+    height: auto;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    transition: 1s
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    font-size: 50px;
+    font-weight: bolder;
+    position: absolute;
+    padding: 1;
+    margin-top: 0;
+    cursor: pointer;
 }
