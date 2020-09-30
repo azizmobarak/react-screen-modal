@@ -7,12 +7,12 @@ export const CoverModal = (props) => {
   return (
     <div
     id="modal"
-  style={{ backgroundColor:props.color,visibility:props.show==true ? "visible" : "hidden"}}
+  style={{ backgroundColor:typeof props.color!=="undefined" ? props.color : "white",visibility:props.show==true ? "visible" : "hidden"}}
   className={styles.maincontainer}>
   {props.closeButtonRight==true?
     <p id="close"
     onClick={()=>props.onClose()}
-    style={{ color:props.closeButtonColor,marginLeft:"95%" }}
+    style={{ color:typeof props.closeButtonColor!=="undefined" ? props.closeButtonColor : "black" ,marginLeft:"95%" }}
     className={styles.close}>
     X
     </p>

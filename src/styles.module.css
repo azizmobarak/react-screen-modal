@@ -6,7 +6,7 @@
     z-index: 9999;
     position: absolute;
     top: 0;
-    transition: 1s
+    transition: 1ms;
 }
 
 .container {

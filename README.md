@@ -9,20 +9,72 @@
 ```bash
 npm install --save react-screen-modal
 ```
+## props
+---------------------type-----|-----default--------|----------
+
+show               | boolean  |      false         |
+-------------------------------------------------------------
+onClose            |   void   |   --------------   |
+--------------------------------------------------------------
+color              | string   |       white        |
+--------------------------------------------------------------
+closeButtonColor   | string   |      black         |
+--------------------------------------------------------------
+closeButtonRight   | boolean  |       false        |
+--------------------------------------------------------------
+
+
+
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React,{useState} from 'react'
+import { CoverModal } from 'react-screen-modal'
 
-import MyComponent from 'react-screen-modal'
-import 'react-screen-modal/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+
+const [show,showmodal]=useState(false)
+
+// change to false
+const openmodal=()=>{
+  showmodal(true);
 }
+
+//change to true
+const closemodal =()=>{
+  showmodal(false)
+}
+
+    return <div>
+
+  <div style={{ display:"flex",flexDirection:"column",justifyContent:"center" ,alignItems:"center",height:"100vh" }} >
+
+   <button style={{ width:200,color:"green" }} onClick={()=>openmodal()} >show</button>
+
+  </div>
+{/* start ====> call the modal anywhere */}
+  <CoverModal
+    show={show}
+    onClose={closemodal}
+    color = "aqua"
+    closeButtonColor="#fff"
+    closeButtonRight={true} >
+{/* the content must be changed by your own */}
+{/*Example*/}
+    <form>
+    <input type="email" placeholder="email" /><br/>
+    <input type="password" placeholder="password" /><br/>
+    <input type="submit" value="submit" />
+    </form>
+
+    </CoverModal>
+      </div>
+}
+
+export default App
+
 ```
 
 ## License
