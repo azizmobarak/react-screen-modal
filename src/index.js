@@ -1,28 +1,47 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './styles.module.css';
 import 'react-screen-modal/dist/index.css';
+import show from './functions';
 
 export const CoverModal = (props) => {
+
+useEffect(()=>{
+  show.Direction(props.direction,props.show,props.duration);
+});
 
   return (
     <div
     id="modal"
-  style={{ backgroundColor:typeof props.color!=="undefined" ? props.color : "white",visibility:props.show==true ? "visible" : "hidden"}}
+  style={{
+     backgroundColor:typeof props.color!=="undefined" ? props.color : "white",
+    // visibility:props.show==true ? "visible" : "hidden"
+    width:typeof props.width!="undefined" ? props.width : "100%"
+    }}
   className={styles.maincontainer}>
-  {props.closeButtonRight==true?
+  {
+    typeof props.closeButtonRight!="undefined" ?
+    props.closeButtonRight==true?
     <p id="close"
     onClick={()=>props.onClose()}
-    style={{ color:typeof props.closeButtonColor!=="undefined" ? props.closeButtonColor : "black" ,marginLeft:"95%" }}
+    style={{
+     color:typeof props.closeButtonColor!=="undefined" ? props.closeButtonColor : "black" ,
+     marginLeft:"95%"
+    }}
     className={styles.close}>
     X
     </p>
     :
     <p id="close"
     onClick={()=>props.onClose()}
-    style={{ color:props.closeButtonColor,marginLeft:"5%" }}
+    style={{
+      color:typeof props.closeButtonColor!=="undefined" ? props.closeButtonColor : "black",
+      marginLeft:"5%"
+     }}
     className={styles.close}>
     X
     </p>
+    :
+    <div></div>
   }
    <div
    style={{ backgroundColor:props.color }}

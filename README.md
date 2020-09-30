@@ -57,47 +57,27 @@ const closemodal =()=>{
   setshow(false)
 }
 
-  return <div>
+  return (
+    // add it inside comppnenet or alone
+     <CoverModal
+    width={500} // default is 100%
+    direction="left" // default is left
+    duration={2}  // default is 0
+    show={show}   // required
+    onClose={closemodal}  // required
+    color="red"  // default is white
+    closeButtonColor="#fff"  // default is black
+   closeButtonRight={false}  // default is hidden
+    >
+{/* the content must be changed by your own
+    default content will display in cnenter using flex box
+    for customization add your <div> tag with 100% width and 100 height
+*/}
 
-  <div
-  style={{
-    display:"flex",
-    flexDirection:"column",
-    justifyContent:"center",
-    alignItems:"center",height:"100vh"
-    }} >
-
-   <button
-   style={{ width:200,color:"green" }}
-    onClick={()=>openmodal()} >
-    show
-    </button>
-
-  </div>
-{/* start ====> call the modal anywhere */}
-  <CoverModal
-    show={show}
-    onClose={closemodal}
-    color = "aqua"
-    closeButtonColor="#fff"
-    closeButtonRight={true} >
-{/* the content must be changed by your own */}
-{/*Example*/}
-    <form>
-    <input
-    type="email"
-    placeholder="email" />
-    <br/>
-    <input type="password"
-     placeholder="password" />
-     <br/>
-    <input
-     type="submit"
-     value="submit" />
-    </form>
+<input type="button" onClick={()=>closemodal()} value="Close it" />
 
     </CoverModal>
-      </div>
+  )
 }
 
 export default App
