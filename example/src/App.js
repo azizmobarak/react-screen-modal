@@ -4,16 +4,16 @@ import { CoverModal } from 'react-screen-modal'
 
 const App = () => {
 
-const [show,showmodal]=useState(false)
+const [show,setshow]=useState(false)
 
 // change to false
 const openmodal=()=>{
-  showmodal(true);
+  setshow(true);
 }
 
 //change to true
 const closemodal =()=>{
-  showmodal(false)
+  setshow(false)
 }
 
     return <div>

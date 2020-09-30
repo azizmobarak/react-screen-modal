@@ -46,23 +46,32 @@ import { CoverModal } from 'react-screen-modal'
 
 const App = () => {
 
-const [show,showmodal]=useState(false)
+const [show,setshow]=useState(false)
 
 // change to false
 const openmodal=()=>{
-  showmodal(true);
+  setshow(true);
 }
-
 //change to true
 const closemodal =()=>{
-  showmodal(false)
+  setshow(false)
 }
 
-    return <div>
+  return <div>
 
-  <div style={{ display:"flex",flexDirection:"column",justifyContent:"center" ,alignItems:"center",height:"100vh" }} >
+  <div
+  style={{
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"center",
+    alignItems:"center",height:"100vh"
+    }} >
 
-   <button style={{ width:200,color:"green" }} onClick={()=>openmodal()} >show</button>
+   <button
+   style={{ width:200,color:"green" }}
+    onClick={()=>openmodal()} >
+    show
+    </button>
 
   </div>
 {/* start ====> call the modal anywhere */}
@@ -75,9 +84,16 @@ const closemodal =()=>{
 {/* the content must be changed by your own */}
 {/*Example*/}
     <form>
-    <input type="email" placeholder="email" /><br/>
-    <input type="password" placeholder="password" /><br/>
-    <input type="submit" value="submit" />
+    <input
+    type="email"
+    placeholder="email" />
+    <br/>
+    <input type="password"
+     placeholder="password" />
+     <br/>
+    <input
+     type="submit"
+     value="submit" />
     </form>
 
     </CoverModal>
