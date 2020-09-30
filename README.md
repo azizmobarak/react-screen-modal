@@ -13,23 +13,28 @@ npm install --save react-screen-modal
 
 ---------------------------------------------------------------
 
-
-props----------|----type--|--default--|----------
-
-
-show-----------| boolean  |  false
+>duration : type => int ,default => 0  "in seconds"
 
 
-onClose---------|   void   |  -----
+>direction : type => string , default => "left"
 
 
-color-----------| string   |       white
+>width : type => int | string , default => "100%"
 
 
-closeButtonColor-| string   |      black
+>show : type => boolean  ,default =>  false
 
 
-closeButtonRight-| boolean  |       false
+>onClose : type => void    -----
+
+
+>color : type => string ,default => white
+
+
+>closeButtonColor : type => string default => black
+
+
+>closeButtonRight : type => boolean ,default=>false
 
 --------------------------------------------------------------
 
@@ -62,7 +67,7 @@ const closemodal =()=>{
      <CoverModal
     width={500} // default is 100%
     direction="left" // default is left
-    duration={2}  // default is 0
+    duration={2}  // default is 0 in seconds
     show={show}   // required
     onClose={closemodal}  // required
     color="red"  // default is white
