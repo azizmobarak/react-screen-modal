@@ -11,7 +11,6 @@ npm install --save react-screen-modal
 ```
 ## props
 ---------------------type-----|-----default--------|----------
-
 show               | boolean  |      false         |
 -------------------------------------------------------------
 onClose            |   void   |   --------------   |
