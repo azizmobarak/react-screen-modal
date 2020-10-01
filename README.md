@@ -78,7 +78,6 @@ const closemodal =()=>{
   </div>
 
   <CoverModal
-<<<<<<< HEAD
     width={500}
     height={500}
     direction="left"
@@ -87,29 +86,14 @@ const closemodal =()=>{
     show={show}
     onClose={closemodal}
     color="red"
-    closeButtonColor="#fff"
-   closeButtonRight={false}
     >
 {/* the content must be changed by your ownt */}
-=======
-    width={500}                    
-    height={500}                  
-    direction="left"              
-    position="bottom"             
-    duration={2}                  
-    show={show}                   
-    onClose={closemodal}       
-    color="red"                       
-    >
-    
-{/* the content must be changed by your own */}
->>>>>>> 746aaa4b9655b417c36cd33359b9d225a81f10e1
 
 <input type="button" onClick={()=>closemodal()} value="Close it" />
 
   </CoverModal>
-    
-    
+
+
     </div>
   )
 }
