@@ -72,39 +72,38 @@ const closemodal =()=>{
 
   return (
     <div>
-
   <div style={{
     display:"flex",
     flexDirection:"column",
     justifyContent:"center" ,
     alignItems:"center",
     height:"100vh" }} >
-
    {/* button to show and close the drawer */}
    <button style={{ width:200,color:"green" }} onClick={()=>openmodal()} >show</button>
-
   </div>
 
   <CoverModal
-    width={500} // default is 100%
-    height={500} // default is 100vh
-    direction="left" // default is left
-    position="bottom" // default is left for top and bottom & top for right and left
-    duration={2}  // default is 0 in seconds
-    show={show}   // required
-    onClose={closemodal}  // required
-    color="red"  // default is white
-    closeButtonColor="#fff"  // default is black
-   closeButtonRight={false}  // default is hidden
+    width={500}                    // default is 100%
+    height={500}                  // default is 100vh
+    direction="left"              // default is left
+    position="bottom"             // default is left for top and bottom & top for right and left
+    duration={2}                  // default is 0 in seconds
+    show={show}                   // required
+    onClose={closemodal}          // required
+    color="red"                   // default is white
+    closeButtonColor="#fff"       // default is black
+   closeButtonRight={false}       // default is hidden
     >
+    
 {/* the content must be changed by your own
     default content will display in cnenter using flex box
     for customization add your <div> tag with 100% width and 100 height
 */}
-
 <input type="button" onClick={()=>closemodal()} value="Close it" />
 
-    </CoverModal>
+  </CoverModal>
+    
+    
     </div>
   )
 }
