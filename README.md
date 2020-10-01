@@ -16,10 +16,16 @@ npm install --save react-screen-modal
 >duration : type => int ,default => 0  "in seconds"
 
 
->direction : type => string , default => "left"
+>direction : type => string , default => "left" => can be  {left,right,top,bottom,center}
+
+
+>position : typr => string , default => "left" | "top" => can be  {left,right,top,bottom,center}
 
 
 >width : type => int | string , default => "100%"
+
+
+>width : type => int | string , default => "100vh"
 
 
 >show : type => boolean  ,default =>  false
@@ -39,7 +45,9 @@ npm install --save react-screen-modal
 --------------------------------------------------------------
 
 
+## notes
 
+>put center in both direction and position to centralize the modal
 
 
 ## Usage
@@ -76,9 +84,12 @@ const closemodal =()=>{
    <button style={{ width:200,color:"green" }} onClick={()=>openmodal()} >show</button>
 
   </div>
-     <CoverModal
+
+  <CoverModal
     width={500} // default is 100%
+    height={500} // default is 100vh
     direction="left" // default is left
+    position="bottom" // default is left for top and bottom & top for right and left
     duration={2}  // default is 0 in seconds
     show={show}   // required
     onClose={closemodal}  // required

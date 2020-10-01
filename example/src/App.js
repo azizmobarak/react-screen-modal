@@ -6,8 +6,9 @@ const App = () => {
 
 const [show,setshow]=useState(false)
 
+
 // change to false
-const openmodal=()=>{
+const openmodal=(position,direction,color,width,height,duration)=>{
   setshow(true);
 }
 
@@ -17,34 +18,44 @@ const closemodal =()=>{
 }
 
     return <div>
+    <div style={{
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"space-around" ,
+      alignItems:"center",
+      height:"100vh" }} >
 
-  <div style={{
-    display:"flex",
-    flexDirection:"column",
-    justifyContent:"center" ,
-    alignItems:"center",
-    height:"100vh" }} >
+   <button style={{ position:"absolute",alignSelf:"center" }} onClick={()=>openmodal()}>open modal</button>
 
 
-   <button style={{ width:200,color:"green" }} onClick={()=>openmodal()} >show</button>
-   website content
-   content here
-  </div>
+    </div>
+
 {/* start ====> call the modal anywhere */}
   <CoverModal
-    width={300}
-    direction="top" //default is left
+    width={500}
+    height={300}
+    direction="center" //default is left
+    position="center"
     duration={1}
     show={show}
     onClose={closemodal}
-    color="dodgerblue"
-   // closeButtonColor="#fff"
-    closeButtonRight={false}
+    color="aqua"
     >
 {/* the content must be changed by your own */}
 
-    <input type="button" onClick={()=>closemodal()} value="Close it" />
-     drawer content
+<div style={{
+  display:"flex",
+  flexDirection:"column",
+  justifyContent:"center",
+  alignItems:"center",
+  height:"100%"
+}}>
+
+you can add drawer content here
+<input type="button" onClick={()=>closemodal()} value="Close it" />
+
+</div>
+
     </CoverModal>
       </div>
 }
