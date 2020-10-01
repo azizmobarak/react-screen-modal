@@ -25,24 +25,26 @@ const closemodal =()=>{
     alignItems:"center",
     height:"100vh" }} >
 
-   <button style={{ width:200,color:"green" }} onClick={()=>openmodal()} >show</button>
 
+   <button style={{ width:200,color:"green" }} onClick={()=>openmodal()} >show</button>
+   website content
+   content here
   </div>
 {/* start ====> call the modal anywhere */}
   <CoverModal
-    width={500}
-    direction="left"
-    duration={2}
+    width={300}
+    direction="top" //default is left
+    duration={1}
     show={show}
-    //onClose={closemodal}
-    color="red"
-    closeButtonColor="#fff"
-   // closeButtonRight={false}
+    onClose={closemodal}
+    color="dodgerblue"
+   // closeButtonColor="#fff"
+    closeButtonRight={false}
     >
 {/* the content must be changed by your own */}
 
     <input type="button" onClick={()=>closemodal()} value="Close it" />
-
+     drawer content
     </CoverModal>
       </div>
 }

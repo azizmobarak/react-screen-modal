@@ -9,6 +9,8 @@ useEffect(()=>{
   show.Direction(props.direction,props.show,props.duration);
 });
 
+
+
   return (
     <div
     id="modal"
@@ -25,7 +27,7 @@ useEffect(()=>{
     onClick={()=>props.onClose()}
     style={{
      color:typeof props.closeButtonColor!=="undefined" ? props.closeButtonColor : "black" ,
-     marginLeft:"95%"
+     marginLeft:"87%"
     }}
     className={styles.close}>
     X
@@ -35,7 +37,7 @@ useEffect(()=>{
     onClick={()=>props.onClose()}
     style={{
       color:typeof props.closeButtonColor!=="undefined" ? props.closeButtonColor : "black",
-      marginLeft:"5%"
+      marginLeft:"1%"
      }}
     className={styles.close}>
     X
