@@ -37,11 +37,6 @@ npm install --save react-screen-modal
 >color : type => string ,default => white
 
 
->closeButtonColor : type => string default => black
-
-
->closeButtonRight : type => boolean ,default=>false
-
 --------------------------------------------------------------
 
 
@@ -83,22 +78,18 @@ const closemodal =()=>{
   </div>
 
   <CoverModal
-    width={500}                    // default is 100%
-    height={500}                  // default is 100vh
-    direction="left"              // default is left
-    position="bottom"             // default is left for top and bottom & top for right and left
-    duration={2}                  // default is 0 in seconds
-    show={show}                   // required
-    onClose={closemodal}          // required
-    color="red"                   // default is white
-    closeButtonColor="#fff"       // default is black
-   closeButtonRight={false}       // default is hidden
+    width={500}                    
+    height={500}                  
+    direction="left"              
+    position="bottom"             
+    duration={2}                  
+    show={show}                   
+    onClose={closemodal}       
+    color="red"                       
     >
     
-{/* the content must be changed by your own
-    default content will display in cnenter using flex box
-    for customization add your <div> tag with 100% width and 100 height
-*/}
+{/* the content must be changed by your own */}
+
 <input type="button" onClick={()=>closemodal()} value="Close it" />
 
   </CoverModal>
