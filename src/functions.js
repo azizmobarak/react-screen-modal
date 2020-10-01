@@ -6,7 +6,6 @@ const fromRight = (show, duration) => {
             modal.style.transition = duration + "s";
             modal.style.marginLeft = window.innerWidth - modalwidth.substring(0, modalwidth.length - 2) + "px";
             modal.style.visibility = "visible";
-            console.log(window.innerWidth - modalwidth.substring(0, modalwidth.length - 2))
         } else {
             modal.style.transition = duration + "s";
             modal.style.marginLeft = "0";
