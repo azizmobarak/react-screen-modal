@@ -1,6 +1,6 @@
 # react-screen-modal
 
-> full screen modal to show content in the top of all pages elements with few code and without need of anu css , customize your modal colors and content.
+>create a drawer or modal , you can customize the size and the position (corner) and the direction (from where it will display), control size of the Drawer/modal (full screen , 100px ,400px ...).
 
 [![NPM](https://img.shields.io/npm/v/react-screen-modal.svg)](https://www.npmjs.com/package/react-screen-modal) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -12,6 +12,10 @@ npm install --save react-screen-modal
 ## props
 
 ---------------------------------------------------------------
+
+
+>type : type=> string => default => "drawer-left" with full screen size ,can be (drawer-right,drawer-left,drawer-top,drawer-bottom,modal)
+
 
 >duration : type => int ,default => 0  "in seconds"
 
@@ -41,9 +45,12 @@ npm install --save react-screen-modal
 ## notes
 
 >put center in both direction and position to centralize the modal
+>it's a drawer first , but can be a modal with centralize of direction and position options
 
 
 ## Usage
+
+you can use width and height width position and direction to customize the modal/drawer
 
 ```jsx
 import React,{useState} from 'react'
@@ -78,8 +85,8 @@ const closemodal =()=>{
   <CoverModal
     width={500}
     height={500}
-    direction="left"
-    position="bottom"
+    direction="ceneter"
+    position="center"
     duration={2}
     show={show}
     color="red"
@@ -98,6 +105,254 @@ const closemodal =()=>{
 export default App
 
 ```
+
+
+you can also use type :
+
+
+
+drawer from the left of screen
+
+
+
+```jsx
+
+<CoverModal
+    type="drawer-left"
+    duration={1}
+    show={show}
+    color="aqua"
+    >
+    {/*your content here*/}
+</CoverModal>
+```
+
+
+drawer from the right of  screen
+
+
+
+```jsx
+
+<CoverModal
+    type="drawer-right"
+    duration={1}
+    show={show}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+drawer from the top of  screen
+
+
+
+```jsx
+
+<CoverModal
+    type="drawer-top"
+    duration={1}
+    show={show}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+drawer from the bottom of screen
+
+
+
+```jsx
+
+<CoverModal
+    type="drawer-bottom"
+    duration={1}
+    show={show}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+
+
+a modal from the top of screen
+
+
+
+```jsx
+
+<CoverModal
+    type="modal"
+    duration={1}
+    show={show}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+
+a modal in the left top corner (top left)
+
+
+
+```jsx
+
+<CoverModal
+    width={300}
+    height={200}
+    direction="left" //top
+    position="top"  // left
+    duration={1}
+    show={show}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+a full screen drawer from left
+
+
+
+```jsx
+
+<CoverModal
+    direction="left"
+    duration={1}
+    show={show}
+    onClose={closemodal}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+a full screen drawer from top
+
+
+
+```jsx
+
+<CoverModal
+    direction="top"
+    duration={1}
+    show={show}
+    onClose={closemodal}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+a full screen drawer from bottom
+
+
+
+```jsx
+
+<CoverModal
+    direction="bottom"
+    duration={1}
+    show={show}
+    onClose={closemodal}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+a full screen drawer from right
+
+
+
+```jsx
+
+<CoverModal
+    direction="right"
+    duration={1}
+    show={show}
+    onClose={closemodal}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+
+a modal in the left bottom corner (bottom left)
+
+
+
+
+```jsx
+
+<CoverModal
+    width={300}
+    height={200}
+    direction="left" // bottom
+    position="bottom" //left
+    duration={1}
+    show={show}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+a modal in the right top corner (top right)
+
+
+
+```jsx
+
+<CoverModal
+    width={300}
+    height={200}
+    direction="right" // top
+    position="top" //right
+    duration={1}
+    show={show}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
+a modal in the right bottom corner (bottom right)
+
+
+
+```jsx
+
+<CoverModal
+    width={300}
+    height={200}
+    direction="right"  // bottom
+    position="bottom" // right
+    duration={1}
+    show={show}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
+
+
 
 ## License
 

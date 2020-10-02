@@ -3,11 +3,11 @@
 const fromright = (show, duration, position) => {
     var modal = document.getElementById('modal');
     if (show == true) {
-        var modalwidth = modal.style.width;
+        var modalwidth = modal.clientWidth;
         modal.style.marginTop = changeDefaultPositiontoBottom(position);
         if (modalwidth !== "100%") {
             modal.style.transition = duration + "s";
-            modal.style.marginLeft = window.innerWidth - modalwidth.substring(0, modalwidth.length - 2) + "px";
+            modal.style.marginLeft = (window.innerWidth - modalwidth) + "px";
             modal.style.visibility = "visible";
         } else {
             modal.style.transition = duration + "s";
@@ -62,13 +62,13 @@ const fromTop = (show, duration, position) => {
 const fromBottom = (show, duration, position) => {
     var modal = document.getElementById('modal');
     if (show == true) {
-        var modalheight = modal.style.height;
+        var modalheight = modal.clientHeight;
         console.log('here')
         modal.style.marginLeft = changeDefaultPositiontoRight(position);
         if (modalheight !== "100vh") {
             modal.style.transition = duration + "s";
             modal.style.visibility = "visible";
-            modal.style.marginTop = window.innerHeight - modalheight.substring(0, modalheight.length - 2) + "px";
+            modal.style.marginTop = (window.innerHeight - modalheight) + "px";
         } else {
             modal.style.transition = duration + "s";
             modal.style.visibility = "visible";
@@ -86,16 +86,16 @@ const fromBottom = (show, duration, position) => {
 // the window size and the modal size and put it on the right position
 const toCenter = (duration, show) => {
     var modal = document.getElementById('modal');
-    var w = modal.style.width.substring(0, (modal.style.width).length - 2);
-    var h = modal.style.height.substring(0, (modal.style.height).length - 2);
+    var w = modal.clientWidth;
+    var h = modal.clientHeight;
 
     if (show == true) {
-        if (modal.style.width === "100%") {
+        if (modal.clientWidth === window.innerWidth) {
             modal.style.marginLeft = "0px";
         } else {
             modal.style.marginLeft = ((parseInt(window.innerWidth) - parseInt(w)) / 2) + "px";
         }
-        if (modal.style.height === "100vh") {
+        if (modal.clientWidth === window.innerHeight) {
             modal.style.marginTop = "0px";
         } else {
             modal.style.marginTop = ((parseInt(window.innerHeight) - parseInt(h)) / 2) + "px";
@@ -143,10 +143,10 @@ const makeDrawerhidden = (direction) => {
 // with keeping it's size.
 const changeDefaultPositiontoRight = (position) => {
     var modal = document.getElementById('modal');
-    var modalwidth = modal.style.width;
+    var modalwidth = modal.clientWidth;
     if (position === "right") {
         if (modalwidth !== "100%") {
-            return modal.style.marginLeft = (parseInt(window.innerWidth) - parseInt(modalwidth.substring(0, modalwidth.length - 2))) + "px";
+            return modal.style.marginLeft = (parseInt(window.innerWidth) - parseInt(modalwidth)) + "px";
         }
     } else {
         return "0px"
@@ -157,10 +157,10 @@ const changeDefaultPositiontoRight = (position) => {
 // with keeping it's size.
 const changeDefaultPositiontoBottom = (position) => {
     var modal = document.getElementById('modal');
-    var modalheight = modal.style.height;
+    var modalheight = modal.clientHeight;
     if (position === "bottom") {
         if (modalheight !== "100vh") {
-            return modal.style.marginTop = (window.innerHeight - modalheight.substring(0, modalheight.length - 2)) + "px";
+            return modal.style.marginTop = (parseInt(window.innerHeight) - parseInt(modalheight)) + "px";
         }
     } else {
         return "0px"
@@ -231,6 +231,72 @@ const Direction = (direction, show, duration, position) => {
     counter++;
 }
 
+//drawer from left
+const Leftdrawer = (direction, show, duration, position) => {
+    var modal = document.getElementById('modal');
+    modal.style.width = "auto";
+    modal.style.height = "100vh";
+    Direction("left", show, duration, "left");
+}
+
+//srawer from right
+const Rightdrawer = (direction, show, duration, position) => {
+    var modal = document.getElementById('modal');
+    modal.style.width = "auto";
+    modal.style.height = "100vh";
+    Direction("right", show, duration, "right");
+}
+
+//drawer from top
+const Topdrawer = (direction, show, duration, position) => {
+    var modal = document.getElementById('modal');
+    modal.style.height = "auto";
+    modal.style.width = "100%";
+    Direction("top", show, duration, "top");
+}
+
+//show drawer from bottom with auto height
+const Bottomdrawer = (direction, show, duration, position) => {
+    var modal = document.getElementById('modal');
+    modal.style.height = "auto";
+    modal.style.width = "100%";
+    Direction("bottom", show, duration, "bottom");
+}
+
+const modal = (direction, show, duration, position) => {
+    var modal = document.getElementById('modal');
+    modal.style.height = "auto";
+    modal.style.width = "auto";
+    Direction("center", show, duration, "center");
+}
 
 
-export default { Direction }
+
+//start all function and the job of the component
+const Start = (direction, show, duration, position, type) => {
+
+    switch (type) {
+        case "modal":
+            modal(direction, show, duration, position);
+            break;
+        case "drawer-left":
+            Leftdrawer(direction, show, duration, position)
+            break;
+        case "drawer-right":
+            Rightdrawer(direction, show, duration, position)
+            break;
+        case "drawer-top":
+            Topdrawer(direction, show, duration, position)
+            break;
+        case "drawer-bottom":
+            Bottomdrawer(direction, show, duration, position)
+            break;
+        default:
+            Direction(direction, show, duration, position);
+            break;
+    }
+
+}
+
+
+export default { Start }

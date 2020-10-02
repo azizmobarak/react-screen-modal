@@ -26,19 +26,17 @@ const closemodal =()=>{
       height:"100vh" }} >
 
    <button style={{ position:"absolute",alignSelf:"center" }} onClick={()=>openmodal()}>open modal</button>
-
-
     </div>
 
 {/* start ====> call the modal anywhere */}
   <CoverModal
-    width={500}
-    height={300}
-    direction="left" //default is left
-    position="center"
+    //type="drawer-left"
+   // width={400}
+   //height={300}
+    direction="top" //default is left
+   // position="right"
     duration={1}
     show={show}
-    onClose={closemodal}
     color="aqua"
     >
 {/* the content must be changed by your own */}
@@ -51,8 +49,10 @@ const closemodal =()=>{
   height:"100%"
 }}>
 
+<div style={{ width:"300px",height:"200px" }}>
 you can add drawer content here
 <input type="button" onClick={()=>closemodal()} value="Close it" />
+</div>
 
 </div>
 
