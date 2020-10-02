@@ -34,7 +34,7 @@ const closemodal =()=>{
   <CoverModal
     width={500}
     height={300}
-    direction="center" //default is left
+    direction="left" //default is left
     position="center"
     duration={1}
     show={show}

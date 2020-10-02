@@ -31,8 +31,6 @@ npm install --save react-screen-modal
 >show : type => boolean  ,default =>  false
 
 
->onClose : type => void    -----
-
 
 >color : type => string ,default => white
 
@@ -84,7 +82,6 @@ const closemodal =()=>{
     position="bottom"
     duration={2}
     show={show}
-    onClose={closemodal}
     color="red"
     >
 {/* the content must be changed by your ownt */}

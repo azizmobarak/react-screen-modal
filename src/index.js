@@ -12,12 +12,13 @@ useEffect(()=>{
 
 
   return (
-    <div
+   <div
     id="modal"
   style={{
-     backgroundColor:typeof props.color!=="undefined" ? props.color : "white",
+    backgroundColor:typeof props.color!=="undefined" ? props.color : "white",
     width:typeof props.width!="undefined" ? props.width : "100%",
     height:typeof props.height!="undefined" ? props.height : "100vh",
+    visibility: props.show==true ? 'visible' : "hidden"
     }}
   className={styles.maincontainer}>
    <div
@@ -25,5 +26,6 @@ useEffect(()=>{
    className={styles.container}>
    {props.children}
   </div>
-  </div>)
+  </div>
+  )
 }
