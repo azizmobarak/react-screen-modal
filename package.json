@@ -1,6 +1,6 @@
 {
     "name": "react-screen-modal",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "a react library for creating a modals , drawers and popup window with just one single component and a few lines of code.",
     "author": "azizmobarak",
     "license": "azizmobarak",
