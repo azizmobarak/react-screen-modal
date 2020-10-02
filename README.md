@@ -44,8 +44,7 @@ npm install --save react-screen-modal
 
 ## notes
 
->put center in both direction and position to centralize the modal
->it's a drawer first , but can be a modal with centralize of direction and position options
+>you can use type prop or customize the display with your own using direction and position with custom size.
 
 
 ## Usage
