@@ -20,7 +20,6 @@ useEffect(()=>{
     height:typeof props.height!="undefined" ? props.height : "100vh",
     }}
   className={styles.maincontainer}>
-
    <div
    style={{ backgroundColor:props.color }}
    className={styles.container}>
