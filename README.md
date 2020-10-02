@@ -46,6 +46,7 @@ npm install --save react-screen-modal
 
 >you can use type prop or customize the display with your own using direction and position with custom size.
 
+>when using type the width and height are auto , to customize the size with the type prop add your div inside the CoverModal tag and set the custom width and height.
 
 ## Usage
 
@@ -198,26 +199,6 @@ a modal from the top of screen
 
 
 
-a modal in the left top corner (top left)
-
-
-
-```jsx
-
-<CoverModal
-    width={300}
-    height={200}
-    direction="left" //top
-    position="top"  // left
-    duration={1}
-    show={show}
-    color="aqua"
-    >
-{/*your content here*/}
-</CoverModal>
-```
-
-
 a full screen drawer from left
 
 
@@ -289,6 +270,25 @@ a full screen drawer from right
 </CoverModal>
 ```
 
+
+a modal in the left top corner (top left)
+
+
+
+```jsx
+
+<CoverModal
+    width={300}
+    height={200}
+    direction="left" //top
+    position="top"  // left
+    duration={1}
+    show={show}
+    color="aqua"
+    >
+{/*your content here*/}
+</CoverModal>
+```
 
 
 a modal in the left bottom corner (bottom left)

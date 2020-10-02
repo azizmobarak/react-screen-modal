@@ -30,7 +30,7 @@ const fromLeft = (show, duration, position) => {
         modal.style.transition = duration + "s";
         modal.style.visibility = "visible";
         modal.style.marginLeft = "0";
-        console.log("100%")
+
     } else {
         modal.style.transition = duration + "s";
         modal.style.visibility = "hidden";
@@ -63,7 +63,6 @@ const fromBottom = (show, duration, position) => {
     var modal = document.getElementById('modal');
     if (show == true) {
         var modalheight = modal.clientHeight;
-        console.log('here')
         modal.style.marginLeft = changeDefaultPositiontoRight(position);
         if (modalheight !== "100vh") {
             modal.style.transition = duration + "s";
