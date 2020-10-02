@@ -25,7 +25,7 @@ npm install --save react-screen-modal
 >width : type => int | string , default => "100%"
 
 
->width : type => int | string , default => "100vh"
+>height : type => int | string , default => "100vh"
 
 
 >show : type => boolean  ,default =>  false
