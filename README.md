@@ -14,7 +14,7 @@ npm install --save react-screen-modal
 ---------------------------------------------------------------
 
 
->type : type=> string => default => "drawer-left" with full screen size ,can be (drawer-right,drawer-left,drawer-top,drawer-bottom,modal)
+>type : type=> string => default => "drawer-left" with full screen size => can be (drawer-right,drawer-left,drawer-top,drawer-bottom,modal,modal-left-bottom,modal-bottom-left,modal-right-bottom,modal-right-top,modal-top-right,modal-left-top,modal-top-left,modal-bottom-right)
 
 
 >duration : type => int ,default => 0  "in seconds"
@@ -35,9 +35,13 @@ npm install --save react-screen-modal
 >show : type => boolean  ,default =>  false
 
 
+>backgroundDisable : type => boolean , default => false
+
 
 >color : type => string ,default => white
 
+
+>onClose : type => method (void)  => requierd
 
 --------------------------------------------------------------
 
@@ -47,6 +51,8 @@ npm install --save react-screen-modal
 >you can use type prop or customize the display with your own using direction and position with custom size.
 
 >when using type the width and height are auto , to customize the size with the type prop add your div inside the CoverModal tag and set the custom width and height.
+
+>to make it responsive use % or auto for the modal/drawer and then control the content using media queries for example.
 
 ## Usage
 
@@ -89,6 +95,8 @@ const closemodal =()=>{
     position="center"
     duration={2}
     show={show}
+    backgroundDisable={show}
+    onClose={closemodal}
     color="red"
     >
 {/* the content must be changed by your ownt */}
@@ -121,11 +129,16 @@ drawer from the left of screen
     type="drawer-left"
     duration={1}
     show={show}
+    backgroundDisable={show}
+    onClose={closemodal}
     color="aqua"
     >
     {/*your content here*/}
 </CoverModal>
 ```
+
+
+
 
 
 drawer from the right of  screen
@@ -138,6 +151,8 @@ drawer from the right of  screen
     type="drawer-right"
     duration={1}
     show={show}
+    backgroundDisable={show}
+    onClose={closemodal}
     color="aqua"
     >
 {/*your content here*/}
@@ -155,6 +170,8 @@ drawer from the top of  screen
     type="drawer-top"
     duration={1}
     show={show}
+    backgroundDisable={show}
+    onClose={closemodal}
     color="aqua"
     >
 {/*your content here*/}
@@ -172,6 +189,8 @@ drawer from the bottom of screen
     type="drawer-bottom"
     duration={1}
     show={show}
+    backgroundDisable={show}
+    onClose={closemodal}
     color="aqua"
     >
 {/*your content here*/}
@@ -191,6 +210,8 @@ a modal from the top of screen
     type="modal"
     duration={1}
     show={show}
+    backgroundDisable={show}
+    onClose={closemodal}
     color="aqua"
     >
 {/*your content here*/}
@@ -350,6 +371,41 @@ a modal in the right bottom corner (bottom right)
 {/*your content here*/}
 </CoverModal>
 ```
+
+the following example about showing modal in the top left corner from top using the type prop
+
+```jsx
+ <CoverModal
+    type="modal-top-left"
+   width="30%"
+   height="30%"
+  duration={1}
+  show={show}
+  color="red"
+    >
+
+```
+
+you can also use in type :
+
+>modal-top-right : will display the modal in the top right corner with the top direction in open and close.
+
+>modal-right-top :will display the modal in the top right corner with the right direction in open and close.
+
+>modal-top-left : will display the modal in the top left corner with the top direction in open and close.
+
+>modal-left-top : will display the modal in the top left corner with the left direction in open and close.
+
+>modal-bottom-right:will display the modal in the bottom right corner with the bottom direction in open and close.
+
+>modal-right-bottom:will display the modal in the bottom right corner with the right direction in open and close.
+
+>modal-bottom-left:will display the modal in the bottom left corner with the bottom direction in open and close.
+
+>modal-left-bottom:will display the modal in the bottom left corner with the left direction in open and close.
+
+>modal : will display the modal in the center .
+
 
 
 

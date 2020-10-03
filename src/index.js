@@ -15,6 +15,15 @@ useEffect(()=>{
 
 
 return (
+  <div>
+  <div
+   onClick={()=>props.onClose()}
+   style={{
+    visibility:props.backgroundDisable==true ? 'visible' : "hidden"
+    }}
+   className={styles.cover}
+   > </div>
+
    <div
     id="modal"
   style={{
@@ -30,6 +39,7 @@ return (
    className={styles.container}>
    {props.children}
   </div>
-  </div>
+   </div>
+   </div>
   )
 }
