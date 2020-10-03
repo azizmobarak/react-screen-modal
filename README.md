@@ -41,7 +41,7 @@ npm install --save react-screen-modal
 >color : type => string ,default => white
 
 
->onClose : type => method (void)  => requierd
+>onClose : type => method (void)  => requierd if backgroundDisable is true
 
 --------------------------------------------------------------
 
@@ -230,7 +230,6 @@ a full screen drawer from left
     direction="left"
     duration={1}
     show={show}
-    onClose={closemodal}
     color="aqua"
     >
 {/*your content here*/}
@@ -248,7 +247,6 @@ a full screen drawer from top
     direction="top"
     duration={1}
     show={show}
-    onClose={closemodal}
     color="aqua"
     >
 {/*your content here*/}

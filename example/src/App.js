@@ -30,13 +30,13 @@ const closemodal =()=>{
 
 {/* start ====> call the modal anywhere */}
   <CoverModal
-    type="modal"
-   width="30%"
-   height="30%"
+    //type="drawer-top"
+   //width="30%"
+   //height="100vh"
    backgroundDisable={show}
    onClose={closemodal}
-   direction="left" //default is left
-    //position="top"
+   direction="top" //default is left
+   position="top"
     duration={1}
     show={show}
     color="aqua"
