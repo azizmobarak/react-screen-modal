@@ -13,11 +13,14 @@ useEffect(()=>{
   Drawer.Start(props.direction,props.show,props.duration,props.position,props.type);
 });
 
+const onClose=()=>{
+  props.onClose();
+}
 
 return (
   <div>
   <div
-   onClick={()=>props.onClose()}
+   onClick={()=>onClose()}
    style={{
     visibility:props.backgroundDisable==true ? 'visible' : "hidden"
     }}

@@ -298,57 +298,57 @@ const modal = (show, duration) => {
 
 const modaLLeftTop = (show, duration) => {
     var modal = document.getElementById('modal');
-    modal.style.minHeight = "100px";
-    modal.style.minWidth = "100px";
+    modal.style.maxHeight = "40%";
+    modal.style.maxWidth = "45%";
     Direction("left", show, duration, "top", "modal");
 }
 
 const modalTopLeft = (show, duration) => {
     var modal = document.getElementById('modal');
-    modal.style.minHeight = "100px";
-    modal.style.minWidth = "100px";
+    modal.style.maxHeight = "40%";
+    modal.style.maxWidth = "45%";
     Direction("top", show, duration, "left", "modal");
 }
 
 const modalTopRight = (show, duration) => {
     var modal = document.getElementById('modal');
-    modal.style.minHeight = "100px";
-    modal.style.minWidth = "100px";
+    modal.style.maxHeight = "40%";
+    modal.style.maxWidth = "45%";
     Direction("top", show, duration, "right", "modal");
 }
 
 const modalRightTop = (show, duration) => {
     var modal = document.getElementById('modal');
-    modal.style.minHeight = "100px";
-    modal.style.minWidth = "100px";
+    modal.style.maxHeight = "40%";
+    modal.style.maxWidth = "45%";
     Direction("right", show, duration, "top", "modal");
 }
 
 const modalBottomLeft = (show, duration) => {
     var modal = document.getElementById('modal');
-    modal.style.minHeight = "100px";
-    modal.style.minWidth = "100px";
+    modal.style.maxHeight = "40%";
+    modal.style.maxWidth = "45%";
     Direction("bottom", show, duration, "left", "modal");
 }
 
 const modalBottomRight = (show, duration) => {
     var modal = document.getElementById('modal');
-    modal.style.minHeight = "100px";
-    modal.style.minWidth = "100px";
+    modal.style.maxHeight = "40%";
+    modal.style.maxWidth = "45%";
     Direction("bottom", show, duration, "right", "modal");
 }
 
 const modalLeftBottom = (show, duration) => {
     var modal = document.getElementById('modal');
-    modal.style.minHeight = "100px";
-    modal.style.minWidth = "100px";
+    modal.style.maxHeight = "40%";
+    modal.style.maxWidth = "45%";
     Direction("left", show, duration, "bottom", "modal");
 }
 
 const modalRightBottom = (show, duration) => {
     var modal = document.getElementById('modal');
-    modal.style.minHeight = "100px";
-    modal.style.minWidth = "100px";
+    modal.style.maxHeight = "40%";
+    modal.style.maxWidth = "45%";
     Direction("right", show, duration, "bottom", "modal");
 }
 

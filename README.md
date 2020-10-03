@@ -375,8 +375,8 @@ the following example about showing modal in the top left corner from top using 
 ```jsx
  <CoverModal
     type="modal-top-left"
-   width="30%"
-   height="30%"
+   width="auto"  // by default it's 45%
+   height="auto" // by default it's 40%
   duration={1}
   show={show}
   color="red"

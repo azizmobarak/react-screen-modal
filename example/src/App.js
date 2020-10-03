@@ -8,7 +8,7 @@ const [show,setshow]=useState(false)
 
 
 // change to false
-const openmodal=(position,direction,color,width,height,duration)=>{
+const openmodal=()=>{
   setshow(true);
 }
 
@@ -30,9 +30,9 @@ const closemodal =()=>{
 
 {/* start ====> call the modal anywhere */}
   <CoverModal
-    //type="drawer-top"
-   //width="30%"
-   //height="100vh"
+    type="modal-right-top"
+   width="auto"
+   height="auto"
    backgroundDisable={show}
    onClose={closemodal}
    direction="top" //default is left
@@ -51,7 +51,7 @@ const closemodal =()=>{
   height:"100%"
 }}>
 
-<div style={{ width:"300px",height:"200px" }}>
+<div style={{ width:"200px",height:"200px" }}>
 you can add drawer content here
 <input type="button" onClick={()=>closemodal()} value="Close it" />
 </div>
