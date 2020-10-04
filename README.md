@@ -95,6 +95,7 @@ const closemodal =()=>{
 
 return <div>
 
+ <button onClick={()=>openmodal()}>open modal<button>
 
 <Modal
 show={show}
@@ -103,6 +104,7 @@ closeButton={true}  // can be false
 >
 {/* your content here */}
 </Modal>
+
 </div>
 
 }
