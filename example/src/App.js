@@ -1,5 +1,5 @@
 import React ,{useState} from 'react'
-import { CoverModal,DrawerItem,Modal } from 'react-screen-modal'
+import { DrawerModal,DrawerItem,Modal } from 'react-screen-modal'
 
 const App = () => {
 
@@ -30,7 +30,7 @@ const closemodalw =()=>{
 
 {/* start ====> call the modal anywhere */}
 
-<CoverModal
+<DrawerModal
 type="drawer-left"
 show={show}
 backgroundDisable={show}
@@ -39,12 +39,12 @@ color="red"
 duration={1}
 >
 <p>soooome text</p>
-</CoverModal>
+</DrawerModal>
 
 <Modal
 show={showw}
 onClose={closemodalw}
-closeButton={true}
+//closeButton={false}
 >
 {/* your content here */}
 </Modal>

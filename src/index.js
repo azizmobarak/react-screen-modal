@@ -6,7 +6,7 @@ import {hidescroll,showscroll} from './scroll';
 import MainModal from './modal/modal';
 
 
-export const CoverModal = (props) => {
+export const DrawerModal = (props) => {
 
   const [height,setheight]=useState(props.height);
   const [width,setwidth]=useState(props.width);

@@ -14,7 +14,7 @@ npm install --save react-screen-modal
 ---------------------------------------------------------------
 
 
-=> Modal props :
+=> simple Modal props :
 
 
 >onClose : type => void , required
@@ -25,7 +25,7 @@ npm install --save react-screen-modal
 
 
 
-=> Drawer props :
+=> Drawer/modal props :
 
 
 
@@ -65,7 +65,7 @@ npm install --save react-screen-modal
 
 >you can use type prop or customize the display with your own using direction and position with custom size.
 
->when using type the width and height are auto , to customize the size with the type prop add your div inside the CoverModal tag and set the custom width and height.
+>when using type the width and height are auto , to customize the size with the type prop add your div inside the DrawerModal tag and set the custom width and height.
 
 >to make it responsive use % or auto for the modal/drawer and then control the content using media queries for example.
 
@@ -74,7 +74,7 @@ npm install --save react-screen-modal
 
 ## Usage :
 
-## I - Modal
+## I - simple Modal
 
 ```jsx
 import React from "react";
@@ -108,13 +108,13 @@ closeButton={true}  // can be false
 }
 ```
 
-## II - Drawer
+## II - Drawer / modal
 
 you can use width and height width position and direction to customize the modal/drawer
 
 ```jsx
 import React,{useState} from 'react'
-import { CoverModal,DrawerItem } from 'react-screen-modal'
+import { DrawerModal,DrawerItem } from 'react-screen-modal'
 
 
 const App = () => {
@@ -132,17 +132,10 @@ const closemodal =()=>{
 
   return (
     <div>
-  <div style={{
-    display:"flex",
-    flexDirection:"column",
-    justifyContent:"center" ,
-    alignItems:"center",
-    height:"100vh" }} >
    {/* button to show and close the drawer */}
    <button style={{ width:200,color:"green" }} onClick={()=>openmodal()} >show</button>
-  </div>
 
-  <CoverModal
+  <DrawerModal
     width={500}
     height={500}
     direction="ceneter"
@@ -161,7 +154,7 @@ const closemodal =()=>{
     {/* you can use the drawer item for make it easy to read and organized with some existing css */}
     </DrawerItem>
 
-  </CoverModal>
+  </DrawerModal>
 
 
     </div>
@@ -182,7 +175,7 @@ drawer from the left of screen
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     type="drawer-left"
     duration={1}
     show={show}
@@ -191,7 +184,7 @@ drawer from the left of screen
     color="aqua"
     >
     {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -204,7 +197,7 @@ drawer from the right of  screen
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     type="drawer-right"
     duration={1}
     show={show}
@@ -213,7 +206,7 @@ drawer from the right of  screen
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -223,7 +216,7 @@ drawer from the top of  screen
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     type="drawer-top"
     duration={1}
     show={show}
@@ -232,7 +225,7 @@ drawer from the top of  screen
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -242,7 +235,7 @@ drawer from the bottom of screen
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     type="drawer-bottom"
     duration={1}
     show={show}
@@ -251,7 +244,7 @@ drawer from the bottom of screen
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -263,7 +256,7 @@ a modal from the top of screen
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     type="modal"
     duration={1}
     show={show}
@@ -272,7 +265,7 @@ a modal from the top of screen
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -283,14 +276,14 @@ a full screen drawer from left
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     direction="left"
     duration={1}
     show={show}
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -300,14 +293,14 @@ a full screen drawer from top
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     direction="top"
     duration={1}
     show={show}
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -317,7 +310,7 @@ a full screen drawer from bottom
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     direction="bottom"
     duration={1}
     show={show}
@@ -325,7 +318,7 @@ a full screen drawer from bottom
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -335,7 +328,7 @@ a full screen drawer from right
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     direction="right"
     duration={1}
     show={show}
@@ -343,7 +336,7 @@ a full screen drawer from right
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -353,7 +346,7 @@ a modal in the left top corner (top left)
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     width={300}
     height={200}
     direction="left" //top
@@ -363,7 +356,7 @@ a modal in the left top corner (top left)
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -374,7 +367,7 @@ a modal in the left bottom corner (bottom left)
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     width={300}
     height={200}
     direction="left" // bottom
@@ -384,7 +377,7 @@ a modal in the left bottom corner (bottom left)
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -394,7 +387,7 @@ a modal in the right top corner (top right)
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     width={300}
     height={200}
     direction="right" // top
@@ -404,7 +397,7 @@ a modal in the right top corner (top right)
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 
@@ -414,7 +407,7 @@ a modal in the right bottom corner (bottom right)
 
 ```jsx
 
-<CoverModal
+<DrawerModal
     width={300}
     height={200}
     direction="right"  // bottom
@@ -424,13 +417,13 @@ a modal in the right bottom corner (bottom right)
     color="aqua"
     >
 {/*your content here*/}
-</CoverModal>
+</DrawerModal>
 ```
 
 the following example about showing modal in the top left corner from top using the type prop
 
 ```jsx
- <CoverModal
+ <DrawerModal
     type="modal-top-left"
    width="auto"  // by default it's 45%
    height="auto" // by default it's 40%
