@@ -1,6 +1,6 @@
 # react-screen-modal
 
->create a drawer or modal , you can customize the size and the position (corner) and the direction (from where it will display), control size of the Drawer/modal (full screen , 100px ,400px ...).
+>with just one component we can create a modal or drawer with different positions, directions  and usage.
 
 [![NPM](https://img.shields.io/npm/v/react-screen-modal.svg)](https://www.npmjs.com/package/react-screen-modal) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
