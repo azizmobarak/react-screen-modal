@@ -431,7 +431,7 @@ the following example about showing modal in the top left corner from top using 
   show={show}
   color="red"
     >
-
+</DrawerModal>
 ```
 
 you can also use in type :
