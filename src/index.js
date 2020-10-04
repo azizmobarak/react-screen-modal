@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import styles from './styles.module.css';
 import 'react-screen-modal/dist/index.css';
 import Drawer from './functions';
+import {hidescroll,showscroll} from './scroll';
+import MainModal from './modal/modal';
+
 
 export const CoverModal = (props) => {
 
@@ -37,7 +40,9 @@ return (
     }}
   className={styles.maincontainer}>
    <div
-   id="react-screen-modal"
+   onMouseEnter={()=>showscroll()}
+   onMouseLeave={()=>hidescroll()}
+   id="container"
    style={{ backgroundColor:props.color }}
    className={styles.container}>
    {props.children}
@@ -45,4 +50,23 @@ return (
    </div>
    </div>
   )
+}
+
+
+export const DrawerItem=(props)=> {
+  return (
+    <div className={styles.draweritem}>
+    {props.children}
+    </div>
+  );
+}
+
+export const Modal=(props)=>{
+  return <MainModal
+   show={props.show}
+   onClose={props.onClose}
+   closeButton={props.closeButton}
+   >
+ {props.children}
+  </MainModal>
 }

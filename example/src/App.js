@@ -1,64 +1,54 @@
 import React ,{useState} from 'react'
-import { CoverModal } from 'react-screen-modal'
-
+import { CoverModal,DrawerItem,Modal } from 'react-screen-modal'
 
 const App = () => {
 
 const [show,setshow]=useState(false)
+const [showw,setshoww]=useState(false)
 
 
 // change to false
 const openmodal=()=>{
   setshow(true);
 }
+const openmodalw=()=>{
+  setshoww(true);
+}
 
 //change to true
 const closemodal =()=>{
   setshow(false)
 }
+const closemodalw =()=>{
+  setshoww(false)
+}
 
     return <div>
-    <div style={{
-      display:"flex",
-      flexDirection:"column",
-      justifyContent:"space-around" ,
-      alignItems:"center",
-      height:"100vh" }} >
-
-   <button style={{ position:"absolute",alignSelf:"center" }} onClick={()=>openmodal()}>open modal</button>
-    </div>
+    <button style={{ position:"absolute",alignSelf:"center" }} onClick={()=>openmodal()}>open modal</button>
+    <br/>
+    <button style={{ position:"absolute",alignSelf:"center" }} onClick={()=>openmodalw()}>open modal</button>
 
 {/* start ====> call the modal anywhere */}
-  <CoverModal
-    type="drawer-right"
-   width="auto"
-   height="auto"
-   backgroundDisable={show}
-   onClose={closemodal}
-   direction="top" //default is left
-   position="top"
-    duration={1}
-    show={show}
-    color="aqua"
-    >
-{/* the content must be changed by your own */}
 
-<div style={{
-  display:"flex",
-  flexDirection:"column",
-  justifyContent:"center",
-  alignItems:"center",
-  height:"100%"
-}}>
+<CoverModal
+type="drawer-left"
+show={show}
+backgroundDisable={show}
+onClose={closemodal}
+color="red"
+duration={1}
+>
+<p>soooome text</p>
+</CoverModal>
 
-<div style={{ width:"200px",height:"200px" }}>
-you can add drawer content here
-<input type="button" onClick={()=>closemodal()} value="Close it" />
-</div>
+<Modal
+show={showw}
+onClose={closemodalw}
+closeButton={true}
+>
+{/* your content here */}
+</Modal>
 
-</div>
-
-    </CoverModal>
       </div>
 }
 

@@ -14,6 +14,21 @@ npm install --save react-screen-modal
 ---------------------------------------------------------------
 
 
+=> Modal props :
+
+
+>onClose : type => void , required
+
+>show : type=> boolean , required
+
+>closeButton : type=> boolean , default => true
+
+
+
+=> Drawer props :
+
+
+
 >type : type=> string => default => "drawer-left" with full screen size => can be (drawer-right,drawer-left,drawer-top,drawer-bottom,modal,modal-left-bottom,modal-bottom-left,modal-right-bottom,modal-right-top,modal-top-right,modal-left-top,modal-top-left,modal-bottom-right)
 
 
@@ -54,13 +69,52 @@ npm install --save react-screen-modal
 
 >to make it responsive use % or auto for the modal/drawer and then control the content using media queries for example.
 
-## Usage
+>if you want to use drawer with the same variable of modal or trying to display modal from the drawer then turn backgroundDisable for the drawer to false.
+
+
+## Usage :
+
+## I - Modal
+
+```jsx
+import React from "react";
+import { Modal } from 'react-screen-modal';
+
+export default App =()=>{
+
+const [show,setshow]=useState(false)
+
+// show
+const openmodal=()=>{
+  setshow(true);
+}
+// hide
+const closemodal =()=>{
+  setshow(false)
+}
+
+return <div>
+
+
+<Modal
+show={show}
+onClose={closemodal}
+closeButton={true}  // can be false
+>
+{/* your content here */}
+</Modal>
+</div>
+
+}
+```
+
+## II - Drawer
 
 you can use width and height width position and direction to customize the modal/drawer
 
 ```jsx
 import React,{useState} from 'react'
-import { CoverModal } from 'react-screen-modal'
+import { CoverModal,DrawerItem } from 'react-screen-modal'
 
 
 const App = () => {
@@ -113,7 +167,6 @@ const closemodal =()=>{
 export default App
 
 ```
-
 
 you can also use type :
 
