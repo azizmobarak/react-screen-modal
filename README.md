@@ -153,9 +153,13 @@ const closemodal =()=>{
     onClose={closemodal}
     color="red"
     >
-{/* the content must be changed by your ownt */}
+    {/* the content must be changed by your ownt */}
+    <input type="button" onClick={()=>closemodal()} value="Close it" />
 
-<input type="button" onClick={()=>closemodal()} value="Close it" />
+    {/*optional*/}
+    <DrawerItem>
+    {/* you can use the drawer item for make it easy to read and organized with some existing css */}
+    </DrawerItem>
 
   </CoverModal>
 
